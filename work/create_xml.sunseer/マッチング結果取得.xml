@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+  <MATCHING>
+    <STOCKID>0100001</STOCKID>
+    <RESULT>マッチング結果</RESULT>
+    <REASON>マッチングNGの理由</REASON>
+    <UPDATE_DATE>YYYY-MM-DD HH:MM:SS</UPDATE_DATE>
+  </MATCHING>
+</ROOT>

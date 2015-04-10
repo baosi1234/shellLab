@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+  <CLIENT>
+    <PARENT_ID>親ID</PARENT_ID>
+    <CLIENT_ID>加盟店ID</CLIENT_ID>
+    <CLIENT_SID>加盟店ID（枝番）</CLIENT_SID>
+  </CLIENT>
+</ROOT>
