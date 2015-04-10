@@ -9,7 +9,7 @@ export PATH
 # Database account information file
 source ~/.p3src
 
-echo "***** �������Ϥޤ� ����:$(date '+%Y%m%d%H%M%S') *****"
+echo "***** 処理が始まる 時間:$(date '+%Y%m%d%H%M%S') *****"
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # set some variable 
 # XMLSCRIPT: script url
@@ -31,7 +31,7 @@ CLIENT_LIST_XML="client_list_"$(date '+%Y%m%d_%H%M%S')".xml"
 CLIENT_LIST_QUERY_DATA="client_list_query_data.tmp"
 CLIENT_LIST_QUERY_SQL="client_list_query.sql"
 
-echo "********** ���궨�������������Ϥޤ� **********"
+echo "********** 鑑定協会送信処理が始まる **********"
 # add_wangxb_20150225
 if [ ! -d "$XML_DIR" ];
 then
@@ -82,8 +82,8 @@ case $sys_datetime in
 esac
 
 # modify_wangxb_20150310
-# �ǡ����١����Υ����Ȼ��֤��̤��� �ǡ����١�������³��ƥ��Ȥ���
-echo "********** �ǡ����١�������³��ƥ��Ȥ��� **********"
+# データベースのカレント時間を通じる データベースの接続をテストする
+echo "********** データベースの接続をテストする **********"
 $ORACLE_HOME/bin/sqlplus -s $ORAUSER_WEB_PASDB << EOF
 set echo off
 set feedback off
@@ -93,15 +93,15 @@ quit
 EOF
 if [ $? -ne 0 ]
 then 
-    echo "********** DB�ؤΥ�󥯼��Ԥ��� **********"
+    echo "********** DBへのリンク失敗した **********"
     exit
 else
-    echo "********** DB�ؤΥ�󥯣ϣˤǤ� **********"
+    echo "********** DBへのリンクＯＫです **********"
 fi
 
 $ORACLE_HOME/bin/sqlplus -s $ORAUSER_WEB_PASDB @$XMLSCRIPT/$MATCHING_RESULT_QUERY_SQL "$chk_start" "$chk_end" > $XMLSCRIPT/$MATCHING_RESULT_QUERY_DATA
 
-echo "********** ���򤷤���ξ�����xml�ե��������������ե�����ν������Ϥޤ� **********" 
+echo "********** 選択した車両情報でxmlファイルを形成し、ファイルの処理が始まる **********" 
 
 # create matching result's xml file
 # add_wangxb_20150227
@@ -132,7 +132,7 @@ fi
 tag_end 'ROOT'
 rm $XMLSCRIPT/$MATCHING_RESULT_QUERY_DATA
 
-echo "********** ���򤷤���ξ�����xml�ե��������������ե�����ν������Ϥޤ� **********"
+echo "********** 選択した車両情報でxmlファイルを形成し、ファイルの処理が始まる **********"
 
 # create client list's xml file
 # add_wangxb_2015027
@@ -147,7 +147,7 @@ then
     CLIENT_LIST_QUERY_DATA="client_list_query_data_"$(date '+%Y%m%d%H%M%S')".tmp"
 fi
 
-echo "********** ���򤷤�Ź�޾����xml�ե���������������ե�����ν������Ϥޤ� **********"
+echo "********** 選択した店舗情報でxmlファイルを生成し、ファイルの処理が始まる **********"
 
 $ORACLE_HOME/bin/sqlplus -s $ORAUSER_MND @$XMLSCRIPT/$CLIENT_LIST_QUERY_SQL > $XMLSCRIPT/$CLIENT_LIST_QUERY_DATA
 
@@ -175,29 +175,29 @@ fi
 tag_end 'ROOT'
 rm $XMLSCRIPT/$CLIENT_LIST_QUERY_DATA
 
-echo "********** Ź�޾����xml�ե���������������ե�����ν���������� **********"
+echo "********** 店舗情報でxmlファイルを生成し、ファイルの処理が終わる **********"
 
 # add_wangxb_20150304
 # Convert xml file encoding
 if [ -e "$XML_DIR/$MATCHING_RESULT_XML" ];
 then
-    echo "********** matching_result.xml�ե����륳���ɤ�ž������**********"
+    echo "********** matching_result.xmlファイルコードを転換し、**********"
     iconv -f euc-jp -t utf-8 $XML_DIR/$MATCHING_RESULT_XML  -o $XML_DIR/$MATCHING_RESULT_XML.utf-8
     mv $XML_DIR/$MATCHING_RESULT_XML.utf-8 $XML_DIR/$MATCHING_RESULT_XML
 fi
 if [ -e "$XML_DIR/$CLIENT_LIST_XML" ];
 then
-    echo "********** client_list.xml�ե��륳���ɤ�ž������**********"
+    echo "********** client_list.xmlフィルコードを転換し、**********"
     iconv -f euc-jp -t utf-8 $XML_DIR/$CLIENT_LIST_XML  -o $XML_DIR/$CLIENT_LIST_XML.utf-8
     mv $XML_DIR/$CLIENT_LIST_XML.utf-8 $XML_DIR/$CLIENT_LIST_XML
 fi
 
-echo -e "********** ���Υ��ftp���̤��ơ���Ū�ʥ����С�����Ͽ������������xml�ե��������Ū�ʥ����С��ޤ�ȯ������ **********\n"
+echo -e "********** 遠距離のftpを通して、目的なサーバーを登録し、生成したxmlファイルを目的なサーバーまで発送する **********\n"
 # add_wangxb_20150304
 # Send the xml file to the destination server by ftp
-ftp_host="222.158.220.249"
-USER="proto"
-PASS="A4bkGawZ7WhEgCrW"
+ftp_host="***.***.***.***"
+USER="***"
+PASS="***"
 ftp -i -n $ftp_host << EOF
 user $USER $PASS
 cd /
@@ -208,9 +208,9 @@ quit
 EOF
 
 # test ftp
-#ftp_host="61.206.38.15"
-#USER="dev_owner"
-#PASS="devowner"
+#ftp_host="***.***.***.***"
+#USER="***"
+#PASS="***"
 #dir="/upload"
 #ftp -i -n $ftp_host << EOF
 #user $USER $PASS
@@ -221,8 +221,8 @@ EOF
 #quit
 #EOF
 
-echo "********** shell���ܤǤμ»ܽ���� **********"
-echo "***** �»ܽ���� ����:$(date '+%Y%m%d%H%M%S') *****"
+echo "********** shell脚本での実施終わる **********"
+echo "***** 実施終わる 時間:$(date '+%Y%m%d%H%M%S') *****"
 
 # Save the program log file
 YYMM=$(date +'%Y%m%d%H%M')
@@ -230,10 +230,10 @@ YYMM=$(date +'%Y%m%d%H%M')
 cp /tmp/create_xml.log /usr/p3s/batch/jaaa_match/CreatXML/logs/create_xml.log.$YYMM
 
 # Send error log files into the Admin mailbox
-info_to_mail_1="chenzh@sunseer.co.jp"
-#info_to_mail_1="xa_wangxh@sunseer.co.jp"
-info_to_mail_2="xa_wangxb@sunseer.co.jp"
-title=$(echo "���궨���ͤظ���XML����" | nkf -j)
+info_to_mail_1="***@***.co.jp"
+#info_to_mail_1="***@***.co.jp"
+info_to_mail_2="***@***.co.jp"
+title=$(echo "鑑定協会様へ向けXML作成" | nkf -j)
 nkf -j < /tmp/create_xml.log | mail -s $title $info_to_mail_1 $info_to_mail_2
 
 
