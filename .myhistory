@@ -1,0 +1,51 @@
+Fri Apr 10 03:51:13 CST 2015
+  986  shutdown -h now
+  987  ifup eth0
+  988  shutdhown -h now
+  989  shutdown -h now
+  990  ifconfig
+  991  ssh -T git@github.com
+  992  shutdown -r now
+  993  ls
+  994  ifconfig
+  995  ifdown eth0
+  996  ifup eth0
+  997  ifconfig
+  998  ssh -T git@github.com
+  999  service httpd restart
+ 1000  shutdown -h now
+ 1001  ls
+ 1002  cd
+ 1003  ls
+ 1004  cd /
+ 1005  ls
+ 1006  echo $PATH
+ 1007  set
+ 1008  cd /etc/
+ 1009  ls
+ 1010  vi bashrc 
+ 1011  cd profile
+ 1012  ls
+ 1013  cd profile
+ 1014  ls
+ 1015  cls
+ 1016  vi profile
+ 1017  cd profile.d/
+ 1018  ls
+ 1019  cd ../
+ 1020  ls
+ 1021  vi profile
+ 1022  cd /
+ 1023  ls
+ 1024  cd
+ 1025  ls
+ 1026  mkdir mylinux
+ 1027  ls
+ 1028  cd mylinux/
+ 1029  ls
+ 1030  git init
+ 1031  vi README.md
+ 1032  git add README.md 
+ 1033  git commit -m "init Repository"
+ 1034  git remote add origin git@github.com:wxb/MyLinux.git
+ 1035  git push -u origin master
