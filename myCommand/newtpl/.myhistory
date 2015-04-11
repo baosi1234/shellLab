@@ -100,3 +100,54 @@ Sat Apr 11 05:16:03 CST 2015
  1129  git status
  1130  git add command.list 
  1131  git commit -m '实现newhtml功能'
+Sun Apr 12 06:18:31 CST 2015
+  968  cp -r /root/mylinux/myCommand/newtpl/tpl ./
+  969  ls
+  970  \rm -r newtpl/
+  971  ls
+  972  pwd
+  973  cd /etc/profile.d/
+  974  ls
+  975  vi new.sh 
+  976  bash new.sh php index
+  977  ls
+  978  rm index.php 
+  979  ls
+  980  cd ../
+  981  ls
+  982  vi bashrc 
+  983  alias
+  984  . bashrc 
+  985  alias
+  986  vi bashrc 
+  987  . bashrc 
+  988  alias
+  989  cd
+  990  newphp index
+  991  . /etc/profile
+  992  ls
+  993  alias
+  994  cd /etc/
+  995  ls
+  996  vi bashrc 
+  997  clear
+  998  vi ~/.bashrc 
+  999  cls
+ 1000  . profile
+ 1001  ls
+ 1002  cd mylinux/
+ 1003  ls
+ 1004  cd myCommand/
+ 1005  ls
+ 1006  cd newtpl/
+ 1007  ls
+ 1008  vi new.sh 
+ 1009  alias
+ 1010  newsh
+ 1011  echo $PATH
+ 1012  cd /usr/local/bin
+ 1013  ls
+ 1014  cd -
+ 1015  ls
+ 1016  cp new.sh /usr/local/bin
+ 1017  newsh
