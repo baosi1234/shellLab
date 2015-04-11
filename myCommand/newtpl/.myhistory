@@ -1,0 +1,102 @@
+Sat Apr 11 02:04:10 CST 2015
+  963  ssh -T git@github.com
+  964  service httpd restart
+  965  shutdown -h now
+  966  ls
+  967  cd
+  968  ls
+  969  cd /
+  970  ls
+  971  echo $PATH
+  972  set
+  973  cd /etc/
+  974  ls
+  975  vi bashrc 
+  976  cd profile
+  977  ls
+  978  cd profile
+  979  ls
+  980  cls
+  981  vi profile
+  982  cd profile.d/
+  983  ls
+  984  cd ../
+  985  ls
+  986  vi profile
+  987  cd /
+  988  ls
+  989  cd
+  990  ls
+  991  mkdir mylinux
+  992  ls
+  993  cd mylinux/
+  994  ls
+  995  git init
+  996  vi README.md
+  997  git add README.md 
+  998  git commit -m "init Repository"
+  999  git remote add origin git@github.com:wxb/MyLinux.git
+ 1000  git push -u origin master
+ 1001  ls
+ 1002  cd mylinux/
+ 1003  ls
+ 1004  ls -a
+ 1005  git pull
+ 1006  ls
+ 1007  alias
+ 1008  ls
+ 1009  cd myCommand/
+ 1010  ls
+ 1011  cd newtpl/
+ 1012  ls
+Sat Apr 11 05:16:03 CST 2015
+ 1082  ls
+ 1083  bash newhtml.sh index
+ 1084  vi newhtml.sh 
+ 1085  bash newhtml.sh index
+ 1086  vi newhtml.sh 
+ 1087  bash newhtml.sh index
+ 1088  vi newhtml.sh 
+ 1089  bash newhtml.sh index
+ 1090  vi newhtml.sh 
+ 1091  bash newhtml.sh index
+ 1092  ls
+ 1093  bash newhtml.sh index
+ 1094  ls
+ 1095  vi newhtml.sh 
+ 1096  bash newhtml.sh index
+ 1097  ll
+ 1098  vi newhtml.sh 
+ 1099  bash newhtml.sh index
+ 1100  ll
+ 1101  vi newhtml.sh 
+ 1102  cd tpl/
+ 1103  ls
+ 1104  touch html.tpl
+ 1105  ls
+ 1106  cd ../
+ 1107  ls
+ 1108  vi newhtml.sh 
+ 1109  bash newhtml.sh index
+ 1110  ls
+ 1111  vi newhtml.sh 
+ 1112  ls /dev/
+ 1113  ls
+ 1114  vi newhtml.sh 
+ 1115  bash newhtml.sh index
+ 1116  vi newhtml.sh 
+ 1117  bash newhtml.sh index
+ 1118  vi newhtml.sh 
+ 1119  ls
+ 1120  vi newhtml.sh 
+ 1121  rm tpl/html.tpl 
+ 1122  bash newhtml.sh index
+ 1123  vi newhtml.sh 
+ 1124  ls
+ 1125  rm *.html
+ 1126  ls
+ 1127  rm *.html*
+ 1128  ls
+ 1129  git status
+ 1130  git add command.list 
+ 1131  git commit -m '实现newhtml功能'
