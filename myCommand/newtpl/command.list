@@ -1,2 +1,16 @@
 	
-	newhtml filename [dir] [5]
+这是命令的相关说明，设计这个命令最初的构造就是这样的，在以后使用中会根据实际情况适时修改
+	new type filename [dir] [suffix] [author]
+		| 	 |		  |		|		 |- author: 这是一个可选参数([]表示参数可选)，表示创建文件的作者，这个参数会显示在
+		|	 |		  |		|		 |-         文件开头注释中的author：@author项，为空时会使用当前登录用户填充
+		|	 |		  |		|
+		|	 |		  |		|- suffix：表示文件后缀（可选参数），缺省值是标准文件类型的后缀，例如新建 type是 php时这里
+		|	 |		  |		|          就是php，type是html时，这里是html，如果需要指定特定后缀，例如html后缀设置tpl，就可以
+		|	 |		  | 	|          设置这里tpl
+    	| 	 |		  |
+		| 	 |		  |- dir: 新建文件的路径(可选参数),缺省值是当前目录，这里可以使用存在的绝对路径和相对路径	
+		|	 |
+		|    |- filename: 新建文件的名字，不需要写文件后缀，文件的后缀会根据 type设置默认值或者使用 suffix参数指定特定后缀
+		|
+		|- type: 新建文件类型，支持 html/css/js/php/sh/py/pl/rb 后续可以适时增加
+		|        我们可以设置alias ：例如 alias newhtml='new html' 来省略这一项
