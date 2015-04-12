@@ -151,3 +151,54 @@ Sun Apr 12 06:18:31 CST 2015
  1015  ls
  1016  cp new.sh /usr/local/bin
  1017  newsh
+Sun Apr 12 07:32:36 CST 2015
+ 1035  git branch
+ 1036  git push origin newtpl:newtpl
+ 1037  ls
+ 1038  cd myCommand/
+ 1039  ls
+ 1040  ls -a
+ 1041  ls
+ 1042  cd newtpl/
+ 1043  ls
+ 1044  vi new.sh 
+ 1045  git status
+ 1046  git branch
+ 1047  git commit -a -m "更新代码注释"
+ 1048  git status
+ 1049  cls
+ 1050  git status
+ 1051  vi new.sh 
+ 1052  git add new.sh 
+ 1053  git statu
+ 1054  git status
+ 1055  git checkout master
+ 1056  git pull
+ 1057  cd ../
+ 1058  ls
+ 1059  git pull
+ 1060  ls
+ 1061  cd myCommand/
+ 1062  ls
+ 1063  cd newtpl/
+ 1064  ls
+ 1065  vi new.sh 
+ 1066  git checkout newtpl
+ 1067  ls
+ 1068  git status
+ 1069  git add ../../.myhistory 
+ 1070  git status 
+ 1071  git commit -m ''
+ 1072  git commit -m 'update'
+ 1073  git push
+ 1074  git checkout master
+ 1075  git fetch origin master
+ 1076  git merge origin/master
+ 1077  ls
+ 1078  vi new.sh 
+ 1079  git merge origin/master master
+ 1080  git fetch origin master
+ 1081  ls
+ 1082  git branch
+ 1083  git pull
+ 1084  vi new.sh 
