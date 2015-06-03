@@ -16,6 +16,6 @@ s script will be executed *after* all the other init scripts.
 touch /var/lock/subsys/local
 
 # add_root_20150412
-bash /root/.autoTurnNet.shi
+bash /root/.autoTurnNet.sh
 
 ```
