@@ -19,3 +19,5 @@ touch /var/lock/subsys/local
 bash /root/.autoTurnNet.sh
 
 ```
+
+**当然还可以将shell script文件放的`/etc/profile.d`目录下，可以实现同样的功能**
