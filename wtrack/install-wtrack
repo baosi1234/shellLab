@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# install doc
+
+dir=/usr/local/bin/
+
+if [ ! -d  $dir ]; then
+    echo "$dir is not exists"
+fi
+
+cp ./bin/wtrack $dir
+PATH=$PATH:$dir
+export PATH
+
